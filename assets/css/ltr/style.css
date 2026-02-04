@@ -9762,3 +9762,8 @@ footer {
 		width: 7em;
 	}
 }
+
+/* Custom Navbar Color */
+nav.navbar.validnavs {
+    background-color: lightyellow !important;
+}
