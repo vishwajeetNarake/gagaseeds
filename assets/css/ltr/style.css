@@ -9809,3 +9809,50 @@ footer {
 nav.navbar.validnavs {
 	background-color: lightyellow !important;
 }
+
+/* Custom: Increase product image size */
+.service-style-one-item .thumb img {
+	width: 100%;
+	height: 300px;
+	max-width: none;
+	object-fit: cover;
+}
+
+.product-list-item img {
+	width: 200px !important;
+	height: 200px !important;
+	max-width: none !important;
+	object-fit: cover;
+	border-radius: 50%;
+	/* Optional: make them round like icons often are, or just square */
+}
+
+/* Fix layout for larger icons */
+.product-list-box {
+	display: flex;
+	flex-wrap: wrap;
+	margin: -10px;
+	/* Adjust for item padding */
+}
+
+.product-list-item {
+	flex: 0 0 auto;
+	/* Allow natural sizing or wrap */
+	padding: 10px;
+	text-align: center;
+	width: 33.33%;
+	/* Attempt 3 columns, but wrap if min-width constraints hit? No, let's try just center */
+	/* Better approach for fixed width items: */
+	width: auto;
+	flex-grow: 1;
+	min-width: 220px;
+	/* Ensure enough space for 200px image */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Ensure container allows overflow if needed, or wrap handles it */
+.product-cat-lists {
+	overflow: visible !important;
+}

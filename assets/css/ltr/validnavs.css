@@ -556,7 +556,7 @@ nav.navbar.validnavs.logo-less .navbar-brand {
 }
 
 nav.navbar.validnavs {
-	background-color: var(--white);
+	background-color: #fcfbdc;
 	border-radius: 0;
 	border: none;
 	margin: 0;
