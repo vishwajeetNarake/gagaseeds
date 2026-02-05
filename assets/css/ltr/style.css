@@ -9823,7 +9823,7 @@ nav.navbar.validnavs {
 	height: 200px !important;
 	max-width: none !important;
 	object-fit: cover;
-	border-radius: 50%;
+	border-radius: 0;
 	/* Optional: make them round like icons often are, or just square */
 }
 
@@ -9855,4 +9855,29 @@ nav.navbar.validnavs {
 /* Ensure container allows overflow if needed, or wrap handles it */
 .product-cat-lists {
 	overflow: visible !important;
+}
+
+/* Custom Product Grid Layout (Global) */
+.product-cat-lists .product-list-box {
+	display: grid !important;
+	grid-template-columns: repeat(2, 1fr) !important;
+	gap: 15px;
+	margin: 0 !important;
+	width: auto;
+}
+
+.product-cat-lists .product-list-item {
+	width: auto !important;
+	max-width: none !important;
+	flex: none !important;
+	padding: 15px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.product-cat-lists .product-list-item img {
+	margin: 0 auto;
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
 }
