@@ -4389,10 +4389,14 @@ ul.top-feature li:nth-child(2) p {
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
-	padding: 50px;
+	padding: 0;
 	background: var(--white);
 	height: 100%;
 	border-radius: 30px;
+}
+
+.service-style-one-item .info {
+	padding: 30px;
 }
 
 .service-style-one-item .top {
@@ -4433,7 +4437,9 @@ ul.top-feature li:nth-child(2) p {
 }
 
 .service-style-one-item img {
-	height: 150px;
+	height: 350px;
+	width: 100%;
+	object-fit: contain;
 	margin-bottom: 30px;
 	max-width: inherit;
 }
@@ -6891,6 +6897,45 @@ img.loader {
 
 .featured-product .product-list-item a h5 {
 	margin: 0;
+}
+
+.product-list-box {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+}
+
+@media (max-width: 768px) {
+	.product-list-box {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Quality Seeds Section Specifics */
+.product-cat-lists .product-list-box {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.product-cat-lists .product-list-item {
+	text-align: left;
+}
+
+.product-cat-lists .product-list-item img {
+	height: 300px;
+	width: 100%;
+	object-fit: fill;
+	padding: 0;
+	margin-left: 0;
+}
+
+.product-cat-lists .product-list-item h5 {
+	font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+	font-weight: 600;
+}
+
+.product-cat-info h2.mask-text {
+	font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+	font-style: italic;
 }
 
 
@@ -9808,76 +9853,4 @@ footer {
 /* Custom Navbar Color */
 nav.navbar.validnavs {
 	background-color: lightyellow !important;
-}
-
-/* Custom: Increase product image size */
-.service-style-one-item .thumb img {
-	width: 100%;
-	height: 300px;
-	max-width: none;
-	object-fit: cover;
-}
-
-.product-list-item img {
-	width: 200px !important;
-	height: 200px !important;
-	max-width: none !important;
-	object-fit: cover;
-	border-radius: 0;
-	/* Optional: make them round like icons often are, or just square */
-}
-
-/* Fix layout for larger icons */
-.product-list-box {
-	display: flex;
-	flex-wrap: wrap;
-	margin: -10px;
-	/* Adjust for item padding */
-}
-
-.product-list-item {
-	flex: 0 0 auto;
-	/* Allow natural sizing or wrap */
-	padding: 10px;
-	text-align: center;
-	width: 33.33%;
-	/* Attempt 3 columns, but wrap if min-width constraints hit? No, let's try just center */
-	/* Better approach for fixed width items: */
-	width: auto;
-	flex-grow: 1;
-	min-width: 220px;
-	/* Ensure enough space for 200px image */
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-/* Ensure container allows overflow if needed, or wrap handles it */
-.product-cat-lists {
-	overflow: visible !important;
-}
-
-/* Custom Product Grid Layout (Global) */
-.product-cat-lists .product-list-box {
-	display: grid !important;
-	grid-template-columns: repeat(2, 1fr) !important;
-	gap: 15px;
-	margin: 0 !important;
-	width: auto;
-}
-
-.product-cat-lists .product-list-item {
-	width: auto !important;
-	max-width: none !important;
-	flex: none !important;
-	padding: 15px;
-	box-sizing: border-box;
-	text-align: center;
-}
-
-.product-cat-lists .product-list-item img {
-	margin: 0 auto;
-	display: inline-block;
-	max-width: 100%;
-	height: auto;
 }
