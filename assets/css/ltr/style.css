@@ -4444,6 +4444,8 @@ ul.top-feature li:nth-child(2) p {
 	max-width: inherit;
 }
 
+
+
 .service-style-one-item a.btn-angle {
 	display: inline-block;
 	height: 58px;
@@ -6921,7 +6923,7 @@ img.loader {
 }
 
 .product-cat-lists .product-list-item img {
-	height: 300px;
+	height: 250px;
 	width: 100%;
 	object-fit: fill;
 	padding: 0;
