@@ -1,43 +1,43 @@
 /* ===================================================================
     
-    Author          : Valid Theme
-    Template Name   : Agrica - Organic Farm Agriculture Template
-    Version         : 1.0
+	Author          : Valid Theme
+	Template Name   : Agrica - Organic Farm Agriculture Template
+	Version         : 1.0
     
 * ================================================================= */
-(function($) {
+(function ($) {
 	"use strict";
 
-	$(document).ready(function() {
+	$(document).ready(function () {
 
 
 
 		/* ==================================================
-		    # Tooltip Init
+			# Tooltip Init
 		===============================================*/
 		$('[data-toggle="tooltip"]').tooltip();
 
 
 		/* ==================================================
-		    # Youtube Video Init
+			# Youtube Video Init
 		 ===============================================*/
 		$('.player').mb_YTPlayer();
 
 
 
 		/* ==================================================
-		    # Scrolla active
+			# Scrolla active
 		===============================================*/
 		$('.animate').scrolla();
 
 
 		/* ==================================================
-		    # imagesLoaded active
+			# imagesLoaded active
 		===============================================*/
-		$('#gallery-masonary,#shop-masonary').imagesLoaded(function() {
+		$('#gallery-masonary,#shop-masonary').imagesLoaded(function () {
 
 			/* Filter menu */
-			$('.mix-item-menu').on('click', 'button', function() {
+			$('.mix-item-menu').on('click', 'button', function () {
 				var filterValue = $(this).attr('data-filter');
 				$grid.isotope({
 					filter: filterValue
@@ -45,7 +45,7 @@
 			});
 
 			/* filter menu active class  */
-			$('.mix-item-menu button').on('click', function(event) {
+			$('.mix-item-menu button').on('click', function (event) {
 				$(this).siblings('.active').removeClass('active');
 				$(this).addClass('active');
 				event.preventDefault();
@@ -73,17 +73,17 @@
 
 
 		/* ==================================================
-		    # Fun Factor Init
+			# Fun Factor Init
 		===============================================*/
 		$('.timer').countTo();
-		$('.fun-fact').appear(function() {
+		$('.fun-fact').appear(function () {
 			$('.timer').countTo();
 		}, {
 			accY: -100
 		});
 
 		/* ==================================================
-		    # Magnific popup init
+			# Magnific popup init
 		 ===============================================*/
 		$(".popup-link").magnificPopup({
 			type: 'image',
@@ -106,12 +106,12 @@
 			fixedContentPos: false
 		});
 
-		$('.magnific-mix-gallery').each(function() {
+		$('.magnific-mix-gallery').each(function () {
 			var $container = $(this);
 			var $imageLinks = $container.find('.item');
 
 			var items = [];
-			$imageLinks.each(function() {
+			$imageLinks.each(function () {
 				var $item = $(this);
 				var type = 'image';
 				if ($item.hasClass('magnific-iframe')) {
@@ -135,7 +135,7 @@
 				},
 				type: 'image',
 				callbacks: {
-					beforeOpen: function() {
+					beforeOpen: function () {
 						var index = $imageLinks.index(this.st.el);
 						if (-1 !== index) {
 							this.goTo(index);
@@ -147,10 +147,10 @@
 
 
 		/* ==================================================
-		    _Progressbar Init
+			_Progressbar Init
 		 ===============================================*/
 		function animateElements() {
-			$('.progressbar').each(function() {
+			$('.progressbar').each(function () {
 				var elementPos = $(this).offset().top;
 				var topOfWindow = $(window).scrollTop();
 				var percent = $(this).find('.circle').attr('data-percent');
@@ -167,7 +167,7 @@
 						fill: {
 							gradient: ['#49a760', '#49a760']
 						}
-					}).on('circle-animation-progress', function(event, progress, stepValue) {
+					}).on('circle-animation-progress', function (event, progress, stepValue) {
 						$(this).find('strong').text((stepValue * 100).toFixed(0) + "%");
 					}).stop();
 				}
@@ -180,8 +180,8 @@
 
 
 		/* ==================================================
-            # Banner Carousel
-         ===============================================*/
+			# Banner Carousel
+		 ===============================================*/
 		const bannerFade = new Swiper(".banner-fade", {
 			// Optional parameters
 			direction: "horizontal",
@@ -207,14 +207,14 @@
 
 			// And if we need scrollbar
 			/*scrollbar: {
-            el: '.swiper-scrollbar',
-          },*/
+			el: '.swiper-scrollbar',
+		  },*/
 		});
 
 
 		/* ==================================================
-            # Testimonials Carousel
-         ===============================================*/
+			# Testimonials Carousel
+		 ===============================================*/
 		const testimonialCarousel = new Swiper(".testimonial-carousel", {
 			// Optional parameters
 			direction: "horizontal",
@@ -227,14 +227,14 @@
 
 			// And if we need scrollbar
 			/*scrollbar: {
-            el: '.swiper-scrollbar',
-          },*/
+			el: '.swiper-scrollbar',
+		  },*/
 		});
 
 
 		/* ==================================================
-            # Testimonials Carousel
-         ===============================================*/
+			# Testimonials Carousel
+		 ===============================================*/
 		const testimonialTwoCarousel = new Swiper(".testimonial-style-two-carousel", {
 			// Optional parameters
 			direction: "horizontal",
@@ -251,14 +251,14 @@
 
 			// And if we need scrollbar
 			/*scrollbar: {
-            el: '.swiper-scrollbar',
-          },*/
+			el: '.swiper-scrollbar',
+		  },*/
 		});
 
 
 		/* ==================================================
-            # Gallery Style One Carousel
-         ===============================================*/
+			# Gallery Style One Carousel
+		 ===============================================*/
 		const galleryOne = new Swiper(".gallery-style-one-carousel", {
 			// Optional parameters
 			loop: true,
@@ -283,8 +283,8 @@
 
 
 		/* ==================================================
-            # Service Carousel
-         ===============================================*/
+			# Service Carousel
+		 ===============================================*/
 		const serviceOneCarousel = new Swiper(".service-style-two-carousel", {
 			// Optional parameters
 			loop: true,
@@ -311,8 +311,8 @@
 
 
 		/* ==================================================
-            # Team Carousel
-         ===============================================*/
+			# Team Carousel
+		 ===============================================*/
 		const teamCarousel = new Swiper(".team-style-one-carousel", {
 			// Optional parameters
 			loop: true,
@@ -339,8 +339,8 @@
 
 
 		/* ==================================================
-            # Clients Carousel
-         ===============================================*/
+			# Clients Carousel
+		 ===============================================*/
 		const brandOneCarousel = new Swiper(".brand-style-one-carousel", {
 			// Optional parameters
 			loop: true,
@@ -361,8 +361,8 @@
 
 
 		/* ==================================================
-            # Product Cateogry Carousel
-         ===============================================*/
+			# Product Cateogry Carousel
+		 ===============================================*/
 		const proCatCarousel = new Swiper(".pro-cat-carousel", {
 			// Optional parameters
 			loop: true,
@@ -391,7 +391,7 @@
 
 
 		/* ==================================================
-		    # Brand Carousel
+			# Brand Carousel
 		 ===============================================*/
 		const brand6col = new Swiper(".brand5col", {
 			// Optional parameters
@@ -417,8 +417,8 @@
 
 
 		/* ==================================================
-            # Product Gallery Carousel
-         ===============================================*/
+			# Product Gallery Carousel
+		 ===============================================*/
 		const productGallery = new Swiper(".product-gallery-carousel", {
 			// Optional parameters
 			loop: true,
@@ -440,9 +440,9 @@
 
 
 		/* ==================================================
-            # Related Product Carousel
-         ===============================================*/
-		 const relatedProduct = new Swiper(".related-product-carousel", {
+			# Related Product Carousel
+		 ===============================================*/
+		const relatedProduct = new Swiper(".related-product-carousel", {
 			// Optional parameters
 			loop: true,
 			slidesPerView: 1,
@@ -463,9 +463,9 @@
 
 
 		/* ==================================================
-            # Timeine Carousel
-         ===============================================*/
-		 const timelineCarousel = new Swiper(".timeline-carousel", {
+			# Timeine Carousel
+		 ===============================================*/
+		const timelineCarousel = new Swiper(".timeline-carousel", {
 			// Optional parameters
 			loop: true,
 			freeMode: true,
@@ -494,15 +494,15 @@
 
 
 		/* ==================================================
-		    Contact Form Validations
+			Contact Form Validations
 		================================================== */
-		$('.contact-form').each(function() {
+		$('.contact-form').each(function () {
 			var formInstance = $(this);
-			formInstance.submit(function() {
+			formInstance.submit(function () {
 
 				var action = $(this).attr('action');
 
-				$("#message").slideUp(750, function() {
+				$("#message").slideUp(750, function () {
 					$('#message').hide();
 
 					$('#submit')
@@ -510,15 +510,15 @@
 						.attr('disabled', 'disabled');
 
 					$.post(action, {
-							name: $('#name').val(),
-							email: $('#email').val(),
-							phone: $('#phone').val(),
-							comments: $('#comments').val()
-						},
-						function(data) {
+						name: $('#name').val(),
+						email: $('#email').val(),
+						phone: $('#phone').val(),
+						comments: $('#comments').val()
+					},
+						function (data) {
 							document.getElementById('message').innerHTML = data;
 							$('#message').slideDown('slow');
-							$('.contact-form img.loader').fadeOut('slow', function() {
+							$('.contact-form img.loader').fadeOut('slow', function () {
 								$(this).remove()
 							});
 							$('#submit').removeAttr('disabled');
@@ -531,7 +531,7 @@
 
 
 		/* ==================================================
-		    GSAP animation
+			GSAP animation
 		================================================== */
 
 		gsap.set(".animation-shape", {
@@ -552,20 +552,20 @@
 
 
 	/* ==================================================
-        Preloader Init
-     ===============================================*/
+		Preloader Init
+	 ===============================================*/
 	function loader() {
-		$(window).on('load', function() {
-			$('#agrica-preloader').addClass('loaded');
-			$("#loading").fadeOut(500);
-			// Una vez haya terminado el preloader aparezca el scroll
+		$(window).on('load', function () {
+			setTimeout(function () {
+				$('#agrica-preloader').addClass('loaded');
+				$("#loading").fadeOut(500);
 
-			if ($('#agrica-preloader').hasClass('loaded')) {
-				// Es para que una vez que se haya ido el preloader se elimine toda la seccion preloader
-				$('#preloader').delay(900).queue(function() {
-					$(this).remove();
-				});
-			}
+				if ($('#agrica-preloader').hasClass('loaded')) {
+					$('#preloader').delay(900).queue(function () {
+						$(this).remove();
+					});
+				}
+			}, 1000); // 1-second delay so the preloader animation is visible on localhost/fast networks
 		});
 	}
 	loader();

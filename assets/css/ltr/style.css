@@ -9698,24 +9698,7 @@ footer {
 	position: relative;
 }
 
-.agrica-preloader .animation-preloader::after {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	content: "";
-	height: 100%;
-	width: 100%;
-	background: url(../../img/logo-icon.png);
-	transform: translate(-50%, -50%);
-	background-repeat: no-repeat;
-	background-position: center;
-}
 
-.bg-dark .agrica-preloader .animation-preloader::after {
-	background: url(../../img/logo-icon-light.png);
-	background-repeat: no-repeat;
-	background-position: center;
-}
 
 .agrica-preloader .animation-preloader .spinner {
 	-webkit-animation: spinner 1s infinite linear;

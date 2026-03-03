@@ -200,3 +200,22 @@ nav.navbar.validnavs.glass-nav {
     box-shadow: 0 0 15px rgba(200, 100, 255, 0.3);
     transform: scale(1.01);
 }
+
+/* Custom Preloader Logo Animation */
+.preloader-logo {
+    max-width: 180px;
+    margin: 0 auto;
+    animation: blink-logo 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes blink-logo {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.85);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
