@@ -362,3 +362,24 @@ nav.navbar a.navbar-brand img.logo {
         transform: scale(1) translateY(0);
     }
 }
+
+/* Center Top Bar Information */
+@media (min-width: 992px) {
+    .top-bar-style-one .container .row.align-center {
+        position: relative;
+        justify-content: center;
+    }
+
+    .top-bar-style-one .col-lg-8 {
+        flex: 0 0 auto;
+        width: auto;
+    }
+
+    .top-bar-style-one .col-lg-4 {
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: auto;
+    }
+}
