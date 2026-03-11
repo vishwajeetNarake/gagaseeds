@@ -570,4 +570,75 @@
 	}
 	loader();
 
+	/* ==================================================
+		Floating Contact Button
+	 ===============================================*/
+	$(document).ready(function () {
+		var whatsappButton = `
+		<a href="https://wa.me/919911725200" class="floating-contact-btn glass-btn" target="_blank" rel="noopener noreferrer">
+			<i class="fab fa-whatsapp"></i>
+		</a>
+		`;
+		$('body').append(whatsappButton);
+
+		/* ==================================================
+			Active Navigation Link Highlight
+		===============================================*/
+		// Get current path and find target link
+		var path = window.location.pathname.split("/").pop();
+
+		// Account for home page with no path
+		if (path == '') {
+			path = 'index.html';
+		}
+
+		var target = $('nav.navbar.validnavs ul.nav > li > a[href="' + path + '"]');
+
+		// Add active class to target link
+		target.addClass('active');
+		target.closest('li').addClass('active');
+
+		/* ==================================================
+			Product Description Full-Screen Modal
+		===============================================*/
+		// Inject modal HTML
+		var modalHtml = `
+            <div class="glass-modal-overlay" id="productModal" style="display:none;">
+                <div class="glass-modal-content glass-card">
+                    <button class="close-modal"><i class="fas fa-times"></i></button>
+                    <h3 id="modalTitle">Product Title</h3>
+                    <p id="modalDescription">Product description goes here.</p>
+                </div>
+            </div>
+        `;
+		$('body').append(modalHtml);
+
+		// Open Modal
+		$('.open-description-modal').on('click', function (e) {
+			e.preventDefault();
+			var title = $(this).data('title');
+			var description = $(this).data('description');
+
+			$('#modalTitle').text(title);
+			$('#modalDescription').text(description);
+			$('#productModal').fadeIn(300);
+			$('body').css('overflow', 'hidden'); // Prevent background scrolling
+		});
+
+		// Close Modal via Button
+		$('.close-modal').on('click', function () {
+			$('#productModal').fadeOut(300);
+			$('body').css('overflow', 'auto');
+		});
+
+		// Close Modal via Overlay Click
+		$('#productModal').on('click', function (e) {
+			if ($(e.target).is('#productModal')) {
+				$(this).fadeOut(300);
+				$('body').css('overflow', 'auto');
+			}
+		});
+
+	});
+
 })(jQuery); // End jQuery

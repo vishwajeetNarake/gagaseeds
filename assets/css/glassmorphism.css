@@ -52,7 +52,7 @@
 
 /* Navbar Glass Effect */
 .glass-nav {
-    background: rgba(230, 200, 255, 0.7) !important;
+    background: rgba(231, 221, 153, 0.7) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
     border-bottom: 1px solid rgba(230, 200, 255, 0.3);
@@ -60,7 +60,32 @@
 }
 
 nav.navbar.validnavs.glass-nav {
-    background-color: rgba(230, 200, 255, 0.8) !important;
+    background-color: rgba(228, 221, 84, 0.244) !important;
+}
+
+/* Active Navigation Link Highlight */
+nav.navbar.validnavs ul.nav>li>a.active {
+    background: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 8px;
+    font-weight: 700 !important;
+    color: #000 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Vertically center the logo image */
+nav.navbar a.navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+    height: 100%;
+    top: 0 !important;
+    /* Override style.css absolute top */
+    padding: 0 !important;
+    /* Reset padding */
+}
+
+nav.navbar a.navbar-brand img.logo {
+    max-height: 80px;
+    margin: auto 0;
 }
 
 /* Animations */
@@ -217,5 +242,123 @@ nav.navbar.validnavs.glass-nav {
     100% {
         opacity: 1;
         transform: scale(1.05);
+    }
+}
+
+/* Floating Contact Button */
+.floating-contact-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.9), rgba(18, 140, 126, 0.9));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 9999;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    animation: bounce 2s infinite;
+}
+
+.floating-contact-btn:hover {
+    transform: scale(1.1);
+    color: white;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Full-Screen Glass Modal */
+.glass-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glass-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    /* Glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    text-align: center;
+    color: var(--white);
+    animation: modal-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-modal-content h3 {
+    margin-bottom: 20px;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.glass-modal-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ffffff;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--color-primary);
+    transform: scale(1.1) rotate(90deg);
+}
+
+@keyframes modal-pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
     }
 }
