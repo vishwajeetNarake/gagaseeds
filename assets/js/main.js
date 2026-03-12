@@ -584,25 +584,23 @@
 		/* ==================================================
 			Active Navigation Link Highlight
 		===============================================*/
-		// Get current absolute URL without hash or search params
-		var currentUrl = window.location.href.split('#')[0].split('?')[0];
+		// Get just the filename from the current page URL (e.g. "about-us.html")
+		var currentPath = window.location.pathname;
+		var currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+		// If empty (visiting root like /gagaseeds/), treat as index.html
+		if (!currentPage || currentPage === '') {
+			currentPage = 'index.html';
+		}
 
-		$('nav.navbar.validnavs ul.nav > li > a').each(function () {
-			// Get each link's absolute URL
-			var linkUrl = this.href.split('#')[0].split('?')[0];
-			var $link = $(this);
+		$('nav ul li a').each(function () {
+			var linkHref = $(this).attr('href') || '';
+			// Strip hash and query params, then get just the filename
+			var linkPage = linkHref.split('#')[0].split('?')[0];
+			linkPage = linkPage.substring(linkPage.lastIndexOf('/') + 1);
 
-			if (currentUrl === linkUrl) {
-				$link.addClass('active');
-				$link.closest('li').addClass('active');
-			}
-			// Fallback: If current URL is a directory root (like GitHub pages gagaseeds/) 
-			// and the link points to index.html in that root.
-			else if (currentUrl.endsWith('/') && linkUrl.endsWith('/index.html')) {
-				if (currentUrl + 'index.html' === linkUrl) {
-					$link.addClass('active');
-					$link.closest('li').addClass('active');
-				}
+			if (linkPage && linkPage === currentPage) {
+				$(this).addClass('active');
+				$(this).closest('li').addClass('active');
 			}
 		});
 
