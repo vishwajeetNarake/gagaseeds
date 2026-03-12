@@ -64,7 +64,8 @@ nav.navbar.validnavs.glass-nav {
 }
 
 /* Active Navigation Link Highlight */
-nav.navbar.validnavs ul.nav>li>a.active {
+nav ul li a.active,
+nav ul li.active > a {
     background: rgba(255, 255, 255, 0.5) !important;
     border-radius: 8px;
     font-weight: 700 !important;
