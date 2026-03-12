@@ -584,19 +584,27 @@
 		/* ==================================================
 			Active Navigation Link Highlight
 		===============================================*/
-		// Get current path and find target link
-		var path = window.location.pathname.split("/").pop();
+		// Get current absolute URL without hash or search params
+		var currentUrl = window.location.href.split('#')[0].split('?')[0];
 
-		// Account for home page with no path
-		if (path == '') {
-			path = 'index.html';
-		}
+		$('nav.navbar.validnavs ul.nav > li > a').each(function () {
+			// Get each link's absolute URL
+			var linkUrl = this.href.split('#')[0].split('?')[0];
+			var $link = $(this);
 
-		var target = $('nav.navbar.validnavs ul.nav > li > a[href="' + path + '"]');
-
-		// Add active class to target link
-		target.addClass('active');
-		target.closest('li').addClass('active');
+			if (currentUrl === linkUrl) {
+				$link.addClass('active');
+				$link.closest('li').addClass('active');
+			}
+			// Fallback: If current URL is a directory root (like GitHub pages gagaseeds/) 
+			// and the link points to index.html in that root.
+			else if (currentUrl.endsWith('/') && linkUrl.endsWith('/index.html')) {
+				if (currentUrl + 'index.html' === linkUrl) {
+					$link.addClass('active');
+					$link.closest('li').addClass('active');
+				}
+			}
+		});
 
 		/* ==================================================
 			Product Description Full-Screen Modal

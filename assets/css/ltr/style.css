@@ -4392,10 +4392,16 @@ ul.top-feature li:nth-child(2) p {
 	padding: 0;
 	background: var(--white);
 	height: 100%;
+	display: flex;
+	flex-direction: column;
 	border-radius: 30px;
 }
 
 .service-style-one-item .info {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	padding: 30px;
 }
 
@@ -9833,9 +9839,4 @@ footer {
 		height: 7em;
 		width: 7em;
 	}
-}
-
-/* Custom Navbar Color */
-nav.navbar.validnavs {
-	background-color: lightyellow !important;
 }

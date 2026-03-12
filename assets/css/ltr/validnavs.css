@@ -2747,7 +2747,7 @@ ul.simple-menu-list>li i {
 		display: block;
 		width: 100%;
 		border-bottom: solid 1px #e0e0e0;
-		padding: 13px 0 !important;
+		padding: 15px 0 !important;
 		border-top: solid 1px #e0e0e0;
 		margin-bottom: -1px;
 	}
@@ -3674,14 +3674,14 @@ nav.navbar.validnavs .navbar-collapse.collapse button i {
 
 @media only screen and (min-width: 1200px) and (max-width: 1350px) {
 	.navbar.validnavs.navbar-default .navbar-nav li a {
-		padding: 30px 10px !important;
+		padding: 15px 10px !important;
 		font-size: 14px;
 	}
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1199px) {
 	.navbar.validnavs.navbar-default .navbar-nav li a {
-		padding: 30px 8px !important;
+		padding: 15px 8px !important;
 		font-size: 14px;
 	}
 }

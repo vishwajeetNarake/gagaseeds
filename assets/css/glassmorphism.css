@@ -383,3 +383,13 @@ nav.navbar a.navbar-brand img.logo {
         width: auto;
     }
 }
+
+/* Reduce size of product cards on product page */
+.services-style-one-area .service-style-one-item.glass-card {
+    transform: scale(0.9);
+    margin: 0 auto;
+}
+
+.services-style-one-area .service-style-one-item.glass-card:hover {
+    transform: translateY(-5px) scale(0.92);
+}
