@@ -64,12 +64,15 @@ nav.navbar.validnavs.glass-nav {
 }
 
 /* Active Navigation Link Highlight */
+nav.navbar.validnavs ul.nav li a.active,
+nav.navbar.validnavs ul.nav li.active > a,
 nav ul li a.active,
 nav ul li.active > a {
     background: rgba(255, 255, 255, 0.5) !important;
     border-radius: 8px;
+    padding: 5px 15px !important;
     font-weight: 700 !important;
-    color: #000 !important;
+    color: #2b7a36 !important;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
